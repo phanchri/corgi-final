@@ -1,0 +1,32 @@
+/*
+Theme Name: CorgiLove
+Layout: Content-Sidebar
+*/
+
+.site-main {
+	margin: 0 -6% 0 0;
+}
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+@media screen and (min-width: 1000px) {
+	.content-area {
+		float: left;
+		margin: 0 -8% 0 0;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 999px) {
+	.site-content .widget-area {
+		float: none;
+		overflow: hidden;
+	}
+}
