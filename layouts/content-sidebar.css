@@ -10,6 +10,7 @@ Layout: Content-Sidebar
 	float: right;
 	overflow: hidden;
 	width: 25%;
+	background-color: #f6db7e;
 }
 .site-footer {
 	clear: both;

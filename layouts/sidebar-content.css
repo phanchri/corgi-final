@@ -15,6 +15,7 @@ Layout: Sidebar-Content
 	float: left;
 	overflow: hidden;
 	width: 25%;
+	background-color: #f6db7e;
 }
 .site-footer {
 	clear: both;

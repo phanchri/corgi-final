@@ -126,7 +126,6 @@ dfn {
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
-	font-family: puppybellies;
 }
 
 h2 {
@@ -289,10 +288,9 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #b87554;
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
-	font-size: .875rem;
 	line-height: 1.5;
 }
 
@@ -304,8 +302,7 @@ h6 {
 	clear: right;
 	font-family: 'Lato', sans-serif;
 	font-weight: 250;n
-	color: #000
-	color: hsl(0, 0%, 0%);	
+	color: #9e4322;
 }
 
 p {
@@ -451,7 +448,7 @@ input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background: #f6db7e;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	font-size: 12px;
@@ -522,17 +519,17 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #9e4322;
 }
 
 a:visited {
-	color: purple;
+	color: #9e4322;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #f6db7e;
 }
 
 a:focus {
@@ -551,8 +548,17 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: block;
-	margin: 0 auto;
-	width: 95%;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	background-color: #f9f1a9;
+	padding-bottom: 20px;
+	border-bottom: solid;
+	border-bottom-color: #9e4322;
+	border-top: solid;
+	border-top-color: #9e4322;
+	border-width-top: 1px;
+	border-width-bottom: 2px;
 }
 
 .main-navigation ul {
@@ -588,20 +594,15 @@ a:active {
 }
 
 .main-navigation li a {
-    line-height: 3.69231;
-    text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-	font-size: .0875rem
-    white-space: nowrap;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-top: solid;
-	border-top-color: #f9f1a9;
-	border-top-width: 0.5px;
-	border-bottom: solid;
-	border-bottom-color: #f9f1a9;
-	border-bottom-width: 0.5px;
+	line-height: 30px;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	white-space: nowrap;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 auto;
+	width: 70%;
 }
 
 .main-navigation li:hover > a {
@@ -624,6 +625,7 @@ a:active {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+	color: #f6db7e;
 }
 
 /* Small menu. */
@@ -672,10 +674,9 @@ a:active {
 }
 
 .site-header {
-	background-color: #f6db7e;
-	width: 70%;
-	margin: 0 auto;
-	margin-top: 50px;
+	background-color: #ffffff;
+	width: 100%;
+	margin-top: 90px;
 }
 
 .site-info {
@@ -683,11 +684,20 @@ a:active {
 }
 
 .site-content {
-	background-color: #f6db7e;
-	width: 70%;
+	background-color: #f9f1a9;
+	width: 100%;
 	margin-bottom: 100px;
-	margin: 0 auto;	
+	float: left;
 }
+
+.content-area {
+	width: 100%;
+	background-color: #f9f1a9;
+	border-top: solid;
+	border-top-width: 3px;
+	border-top-color; #9e4322;
+}
+
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -779,19 +789,18 @@ x.x Header
 .header-image img {
 	display: block;
 	margin: auto;
+	padding-bottom: 20px;
+	background-color: #f6db7e;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget-area {
-	margin-bottom: 0;
-	margin-top: 0;
-	margin-left: 0;
-	margin-right: 0;
 	float: right;
-	width: 25%;
-	padding-right: 100px;
+	padding-right: 50px;
+	padding-left: 50px;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -816,7 +825,7 @@ x.x Header
 
 .hentry {
 	margin: 0 0 0;
-	width: 80%;
+	width: 100%;
 }
 
 .byline,
@@ -834,12 +843,9 @@ x.x Header
 .entry-summary {
 	margin-bottom: 25px;
 	padding-left: 100px;
-	padding-right: 50px;
-	width: 90%;
+	padding-right: 100px;
+	width: 100%;
 	float: left;
-	border-right: solid;
-	border-right-width: 0.5px;
-	border-right-color: #f9f1a9;
 }
 
 .entry-meta {
@@ -847,9 +853,6 @@ x.x Header
 	padding-right: 50px;
 	width: 90%;
 	float: left;
-	border-right: solid;
-	border-right-width: 0.5px;
-	border-right-color: #f9f1a9;
 }
 
 .page-links {
@@ -864,8 +867,20 @@ x.x Header
 .entry-title {
 	padding-left: 100px;
 	padding-right: 50px;
-	width: 90%;
+	width: 100%;
 	float: left;
+}
+
+#primary {
+	width: 80%;
+}
+
+#secondary {
+	width: 20%;
+	background-color: #f9f1a9;
+	border-top: solid;
+	border-top-width: 3px;
+	border-top-color; #9e4322;
 }
 
 /*--------------------------------------------------------------
