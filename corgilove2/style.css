@@ -680,22 +680,35 @@ a:active {
 }
 
 .site-info {
-	display: none;
+	display: block;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #f6db7e;
+	border-top: solid;
+	border-top-width: 3px;
+	border-top-color: #9e4322;
 }
 
 .site-content {
-	background-color: #f9f1a9;
+	background-color: #ffffff;
 	width: 100%;
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 	float: left;
+	border-bottom: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #9e4322;
 }
 
 .content-area {
 	width: 100%;
-	background-color: #f9f1a9;
+	background-color: #ffffff;
 	border-top: solid;
 	border-top-width: 3px;
-	border-top-color; #9e4322;
+	border-top-color: #9e4322;
 }
 
 
@@ -801,6 +814,7 @@ x.x Header
 	float: right;
 	padding-right: 50px;
 	padding-left: 50px;
+	padding-top: 50px;
 }
 
 /* Make sure select elements fit in widgets. */
@@ -877,7 +891,7 @@ x.x Header
 
 #secondary {
 	width: 20%;
-	background-color: #f9f1a9;
+	background-color: #ffffff;
 	border-top: solid;
 	border-top-width: 3px;
 	border-top-color; #9e4322;
@@ -903,20 +917,29 @@ x.x Header
 }
 
 .comment-form {
-	display: none;
+	margin-left: 100px;
+	margin-right: 250px;
 }
 
 .comment-reply-title {
 	display: none;
 }
 
+#comments {
+	margin-left: 250px;
+}
+
+.comment-list {
+	list-style: none;
+}
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
+{
+	display: block;
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */

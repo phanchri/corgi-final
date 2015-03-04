@@ -12,9 +12,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'corgilove' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'corgilove' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'corgilove' ), 'CorgiLove', '<a href="http://NKCP" rel="designer">NKCP</a>' ); ?>
+100 Somewhere St. Somewhere City, SW, SomewhereLand 
+
+Phone: (000) 000 - 0000 
+Fax: (000) 000 - 0000
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
@@ -22,4 +23,5 @@
 <?php wp_footer(); ?>
 
 </body>
+<link rel="icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico"> <!-- adds site icon -->
 </html>
