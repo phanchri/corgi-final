@@ -12,7 +12,10 @@
  */
 
 get_header(); ?>
-
+	//Posts the Responsive Header Image Slider on Home Page only. 
+	<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider limit="-1"]');
+		?></div>
+	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -42,5 +45,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+	
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
