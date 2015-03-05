@@ -13,6 +13,8 @@
  * @uses corgilove_admin_header_style()
  * @uses corgilove_admin_header_image()
  */
+ 
+//This creates a customization of the header image size. 
 function corgilove_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'corgilove_custom_header_args', array(
 		'default-image'          => '',

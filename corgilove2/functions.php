@@ -97,7 +97,7 @@ function corgilove_widgets_init() {
 add_action( 'widgets_init', 'corgilove_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles. In this section, we added the enqueueing of the layout styles and the font styles.
  */
 function corgilove_scripts() {
 	wp_enqueue_style( 'corgilove-style', get_stylesheet_uri() );
@@ -120,7 +120,7 @@ function corgilove_scripts() {
 add_action( 'wp_enqueue_scripts', 'corgilove_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Here, we activated and implemented the Custom Header feature so that wordpress can enable the header image feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
 

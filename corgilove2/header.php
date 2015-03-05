@@ -14,6 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+/*This is where the enqueued scripts hook onto.*/ 
 <?php wp_head(); ?>
 </head>
 
@@ -21,7 +22,9 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'corgilove' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+
+//This code displays the header image and sets a link that will point to the URL and then display the image.
+	<header id="masthead" class="site-header" role="banner">	
 			<?php if ( get_header_image() ) : ?>
 			<div class="header-image">
 
