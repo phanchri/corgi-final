@@ -18,7 +18,7 @@ function corgilove_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
-		'height'                 => 350,
+		'height'                 => 400,
 		'flex-height'            => false,
 		'wp-head-callback'       => 'corgilove_header_style',
 		'admin-head-callback'    => 'corgilove_admin_header_style',
