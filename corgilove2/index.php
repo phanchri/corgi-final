@@ -12,7 +12,8 @@
  */
 
 get_header(); ?>
-	//Posts the Responsive Header Image Slider on Home Page only. 
+
+<!--Posts the Responsive Header Image Slider on Home Page only.-->
 	<div class="headerslider"> <?php echo do_shortcode('[sp_responsiveslider limit="-1"]');
 		?></div>
 	

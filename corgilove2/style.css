@@ -561,7 +561,6 @@ a:active {
 	border-top-color: #9e4322;
 	border-width-top: 1px;
 	border-width-bottom: 2px;
-	font-size: 2em;
 	z-index: 10;
 }
 
@@ -687,7 +686,7 @@ a:active {
 .site-header {
 	background-color: #ffffff;
 	width: 100%;
-	margin-top: 90px;
+	margin-top: 75px;
 }
 
 .site-info {
@@ -811,7 +810,6 @@ a:active {
 x.x Header
 --------------------------------------------------------------*/
 .header-image img {
-	display: block;
 	margin: auto;
 	padding-bottom: 20px;
 	background-color: #f6db7e;
