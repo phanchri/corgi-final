@@ -14,6 +14,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!--This is where the enqueued scripts hook onto for the header image-->
+
 <?php wp_head(); ?>
 </head>
 
@@ -23,6 +25,7 @@
 
 	<header id="masthead" class="site-header" role="banner">	
 			<?php if ( get_header_image() ) : ?>
+			<!--This code displays the header image and sets a link that will point to the URL and then display the image.-->
 			<div class="header-image">
 
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
