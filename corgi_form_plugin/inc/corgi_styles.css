@@ -22,7 +22,7 @@
 	5px solid #eee
 	}
 
-#new_post .petcolor {
+#new_post .corgicolor {
 	height:100px;
 	display:block;
 	}
@@ -38,17 +38,17 @@
 	text-align: center 
 	}
 
-fieldset .listpetinfo {
+fieldset .listcorgiinfo {
 	padding:0;
 	margin:0;
 	}
 	
-fieldset .listpetinfo li {
+fieldset .listcorgiinfo li {
 	list-style:none;
 	padding:5px 0 5px 0;
 	margin:0}
 	
-fieldset .listpetinfo label, .s_label {
+fieldset .listcorgiinfo label, .s_label {
 	width:100px;
 	float:left;
 	padding:2px 10px 0 0;
@@ -62,6 +62,6 @@ fieldset .listpetinfo label, .s_label {
 	padding:0
 	}
 
-.pet_meta {
+.corgi_meta {
 	font-size:13px;
 	}

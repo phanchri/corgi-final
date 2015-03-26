@@ -388,7 +388,7 @@ class cmb_Meta_Box {
 					if ( 'url' == $field['allow'] || ( is_array( $field['allow'] ) && in_array( 'url', $field['allow'] ) ) )
 						$input_type_url="text";
 					echo '<input class="cmb_upload_file" type="' . $input_type_url . '" size="45" id="', $field['id'], '" name="', $field['id'], '" value="', $meta, '" />';
-					echo '<input class="cmb_upload_button button" type="button" value="'.__('Upload File','wp_pet').'" />';
+					echo '<input class="cmb_upload_button button" type="button" value="'.__('Upload File','wp_corgi').'" />';
 					echo '<input class="cmb_upload_file_id" type="hidden" id="', $field['id'], '_id" name="', $field['id'], '_id" value="', get_post_meta( $post->ID, $field['id'] . "_id",true), '" />';
 					echo '<p class="cmb_metabox_description">', $field['desc'], '</p>';
 					echo '<div id="', $field['id'], '_status" class="cmb_upload_status">';
@@ -397,14 +397,14 @@ class cmb_Meta_Box {
 							if ( $check_image ) {
 								echo '<div class="img_status">';
 								echo '<img src="', $meta, '" alt="" />';
-								echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">'.__('Remove Image','wp_pet').'</a>';
+								echo '<a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">'.__('Remove Image','wp_corgi').'</a>';
 								echo '</div>';
 							} else {
 								$parts = explode( '/', $meta );
 								for( $i = 0; $i < count( $parts ); ++$i ) {
 									$title = $parts[$i];
 								} 
-								echo __('File','wp_pet').'<strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">'.__('Remove File','wp_pet').'</a>)';
+								echo __('File','wp_corgi').'<strong>', $title, '</strong>&nbsp;&nbsp;&nbsp; (<a href="', $meta, '" target="_blank" rel="external">Download</a> / <a href="#" class="cmb_remove_file_button" rel="', $field['id'], '">'.__('Remove File','wp_corgi').'</a>)';
 							}	
 						}
 					echo '</div>'; 

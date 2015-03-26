@@ -6,28 +6,28 @@
 if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
   global  $wpdb;
 
-    $petname =  $_POST['petname'];
+    $corginame =  $_POST['corginame'];
     $tags = $_POST['post_tags'];
 
-    $petaddress = $_POST['pet_address'];
-    $petvac = $_POST['pet_vaccines'];
+    $corgiaddress = $_POST['corgi_address'];
+    $corgivac = $_POST['corgi_vaccines'];
 
-    $petdesex = $_POST['pet_desex'];
-    $petneeds = $_POST['pet_needs'];
+    $corgidesex = $_POST['corgi_desex'];
+    $corgineeds = $_POST['corgi_needs'];
  
 
 
 
     // ADD THE FORM INPUT TO $new_post ARRAY
     $new_post = array(
-    'post_title'    =>   $petname,
-    'post_category' =>   array($_POST['pet_gender'],$_POST['pet_size'],$_POST['pet_age'],$_POST['pet_color']),
-    'post_type'     =>   'pet',
+    'post_title'    =>   $corginame,
+    'post_category' =>   array($_POST['corgi_gender'],$_POST['corgi_size'],$_POST['corgi_age'],$_POST['corgi_color']),
+    'post_type'     =>   'corgi',
     'tags_input'    =>   $tags,
-    'pet_address'	=>	$petaddress,
-    'pet_vaccines'	=>	$petvac,
-    'pet_desex'	=>	$petdesex,
-    'pet_needs'	=>	$petneeds,
+    'corgi_address'	=>	$corgiaddress,
+    'corgi_vaccines'	=>	$corgivac,
+    'corgi_desex'	=>	$corgidesex,
+    'corgi_needs'	=>	$corgineeds,
 
 
     );
@@ -37,17 +37,17 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
     //SAVE THE POST
     $pid = wp_insert_post($new_post,$wperror);
 
-    wp_set_post_terms($pid,array($_POST['pet_gender']),'pet-gender',true);
-    wp_set_post_terms($pid,array($_POST['pet_pattern']),'pet-pattern',true);
-    wp_set_post_terms($pid,array($_POST['pet_size']),'pet-size',true);
-    wp_set_post_terms($pid,array($_POST['pet_age']),'pet-age',true);
+    wp_set_post_terms($pid,array($_POST['corgi_gender']),'corgi-gender',true);
+    wp_set_post_terms($pid,array($_POST['corgi_pattern']),'corgi-pattern',true);
+    wp_set_post_terms($pid,array($_POST['corgi_size']),'corgi-size',true);
+    wp_set_post_terms($pid,array($_POST['corgi_age']),'corgi-age',true);
 
 
 
-    if(isset($_POST['pet_color'])){
-      if (is_array($_POST['pet_color'])) {
-        foreach($_POST['pet_color'] as $value){
-         wp_set_post_terms($pid,$value,'pet-color',true);
+    if(isset($_POST['corgi_color'])){
+      if (is_array($_POST['corgi_color'])) {
+        foreach($_POST['corgi_color'] as $value){
+         wp_set_post_terms($pid,$value,'corgi-color',true);
         }
       }
     }
@@ -59,10 +59,10 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
     wp_redirect( $link );
 
     //ADD OUR CUSTOM FIELDS
-    add_post_meta($pid, '_data_pet_vaccines', $petvac, true);
-    add_post_meta($pid, '_data_pet_address', $petaddress, true);
-    add_post_meta($pid, '_data_pet_desex', $petdesex, true);
-    add_post_meta($pid, '_data_pet_needs', $petneeds, true);
+    add_post_meta($pid, '_data_corgi_vaccines', $corgivac, true);
+    add_post_meta($pid, '_data_corgi_address', $corgiaddress, true);
+    add_post_meta($pid, '_data_corgi_desex', $corgidesex, true);
+    add_post_meta($pid, '_data_corgi_needs', $corgineeds, true);
 
 
   if ($_FILES) {
