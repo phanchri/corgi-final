@@ -2,7 +2,10 @@
 
         <div id="add-corgi-form">
 
-            <form id="new_post" name="new_post" method="post" action="new_corgi" class="wpcf7-form" enctype="multipart/form-data"> <!-- Form starts -->
+            <form id="new_post" name="new_post" method="post" action="new_corgi" class="wpcf7-form" enctype="multipart/form-data"> 
+            
+            <!-- This is where the form starts. This page sets up the form that is displayed in the front end when the shortcode is used -->
+			<!-- This is customizes the types of information that will be used for the Corgi Information  -->
 
                 <p><?php _e('Add corgi information and special features in the database for future reference.', 'wp_corgi'); ?></p>
 
@@ -15,11 +18,13 @@
                 <fieldset name="corgi-info">
 
                     <ol class="listcorgiinfo">
+					
+					<!-- This is sets up the individual form information and how it will appear on the front end. This is repeated for each taxonomy, however each taxonomy have different functions -->
 
                         <li>
                             <label for="corgi-gender"><?php _e('Gender', 'wp_corgi'); ?>*</label>
-                            <input class="required" type="radio"  tabindex="24" name="corgi_gender"  value="yes" /><span class="corgi_gender"><?php _e('Yes', 'wp_corgi'); ?>&nbsp;&nbsp;</span>
-                        	<input type="radio" tabindex="25" name="corgi_gender"  value="no" /><span class="corgi_gender"><?php _e('No', 'wp_corgi'); ?>&nbsp;&nbsp;</span>
+                            <input class="required" type="radio"  tabindex="24" name="corgi_gender"  value="female" /><span class="corgi_gender"><?php _e('Female', 'wp_corgi'); ?>&nbsp;&nbsp;</span>
+                        	<input type="radio" tabindex="25" name="corgi_gender"  value="male" /><span class="corgi_gender"><?php _e('Male', 'wp_corgi'); ?>&nbsp;&nbsp;</span>
                                 <option value=""></option>
                                 <?php
                                 $genders = get_terms('corgi-gender', array('hide_empty' => 0));
@@ -129,7 +134,8 @@
     <?php wp_nonce_field('new_corgi'); ?>
 
 
-            </form> <!-- Form ends -->
+            </form> 
+            <!-- This is where the form ends -->
 
         </div>
 

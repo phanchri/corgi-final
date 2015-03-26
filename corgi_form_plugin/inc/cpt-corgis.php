@@ -10,12 +10,13 @@ class CORGIPostType {
 		$this->CORGIPostType();
 	}
 
+//This sets up the Corgi list page where all of the corgi database goes. It customizes the name and function.
 	function CORGIPostType() {
 		$this->labels = array(
-		'name' => __('Corgis','wp_corgi'),
+		'name' => __('Corgi List','wp_corgi'),
 		'singular_name' => _x('Corgi', 'post type singular name', 'wp_corgi'),
-		'add_new' => __('Add Corgi','wp_corgi'),
-		'add_new_item' => __('Add Corgi','wp_corgi'),
+		'add_new' => __('Add A Corgi','wp_corgi'),
+		'add_new_item' => __('Add A Corgi','wp_corgi'),
 		'edit_item' => __('Edit Corgi','wp_corgi'),
 		'new_item' => __('New Corgi','wp_corgi'),
 		'view_item' => __('View Corgis','wp_corgi'),
@@ -44,7 +45,10 @@ class CORGIPostType {
 
 }
 
-//Add corgi genre
+//Adds corgi gender taxonomy. This registers the taxonomy and gives it certain functions and states where it will appear. 
+//For example, 'show_admin_column' displays the taxonomy in the Corgi list page to see what corgi has what attributes.
+//The code repeats for every taxonomy.
+
 function create_corgi_genre_taxonomy()
 {
 
@@ -53,54 +57,51 @@ function create_corgi_genre_taxonomy()
     flush_rewrite_rules();
 }
 
-//Add corgi size
+//Adds corgi size
 function create_corgi_size_taxonomy()
 {
 
     $labels = array('name' => _x( 'Size','wp_corgi'),'menu_name' => __( 'Sizes','wp_corgi'), 'add_new_item' => __( 'Add corgi size','wp_corgi'));
-		register_taxonomy( 'corgi-size', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-size', 'public' =>FALSE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('size','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
+		register_taxonomy( 'corgi-size', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-size', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('size','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
 
-//Add corgi age
+//Adds corgi age
 function create_corgi_age_taxonomy()
 {
 
     $labels = array('name' => _x( 'Age','wp_corgi'),'menu_name' => __( 'Ages','wp_corgi'), 'add_new_item' => __( 'Add corgi age','wp_corgi'));
-		register_taxonomy( 'corgi-age', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-age', 'public' =>FALSE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('age','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
+		register_taxonomy( 'corgi-age', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-age', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('age','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
 
-//Add corgi pattern
+//Adds corgi pattern
 function create_corgi_pattern_taxonomy()
 {
 
     $labels = array('name' => _x( 'Pattern','wp_corgi'),'menu_name' => __( 'Patterns','wp_corgi'), __( 'Add corgi pattern','wp_corgi'));
-		register_taxonomy( 'corgi-pattern', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-pattern', 'public' =>FALSE, 'show_in_nav_menus'=>TRUE,'rewrite' => array( 'slug' => __('pattern','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
+		register_taxonomy( 'corgi-pattern', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-pattern', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE,'rewrite' => array( 'slug' => __('pattern','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
 
-//Add corgi color
+//Adds corgi color
 function create_corgi_color_taxonomy()
 {
 
     $labels = array('name' => _x( 'Color','wp_corgi'),'menu_name' => __( 'Colors','wp_corgi'), __( 'Add corgi color','wp_corgi'));
-		register_taxonomy( 'corgi-color', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-color', 'public' =>FALSE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('color','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
+		register_taxonomy( 'corgi-color', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-color', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('color','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
 
 
-//add_filter('post_link', 'corgitype_permalink', 10, 3);
-//add_filter('post_type_link', 'corgitype_permalink', 10, 3);
-
 function corgitype_permalink($permalink, $post_id, $leavename) {
 	if (strpos($permalink, '%corgi-category%') === FALSE) return $permalink;
 
-        // Get post
+        // Gets the post
         $post = get_post($post_id);
         if (!$post) return $permalink;
 
-        // Get taxonomy terms
+        // Gets the taxonomy terms
         $terms = wp_get_object_terms($post->ID, 'corgi-category','orderby=term_order');
         if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0])) $taxonomy_slug = $terms[0]->slug;
         else $taxonomy_slug = __('no-corgi-category','wp_corgi');

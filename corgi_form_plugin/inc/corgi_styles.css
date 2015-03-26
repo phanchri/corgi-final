@@ -1,18 +1,19 @@
 /* Customization for the look of the Corgi Form when it is displayed through its shortcode in the front end of the page. */
 
+/*This sets the border around the form, the colour and the box surrounding the form. */
 #new_post fieldset {
 	border:2px solid #B87554; 
 	padding:15px;
 	margin:20px 0
 	}
-
+/*This sets the type on the form */
 #new_post label {
 	font-weight:normal;
 	margin-right:1.5em;
 	text-transform:uppercase;
 	font-size:13px
 	}
-
+/*This Configures the table shown on the form*/
 #new_post .field {
 	display:Table;
 	width:40%;
@@ -38,6 +39,7 @@
 	text-align: center 
 	}
 
+/*This customizes where the font lies within the form and the look of the lists that appear on the form.*/
 fieldset .listcorgiinfo {
 	padding:0;
 	margin:0;

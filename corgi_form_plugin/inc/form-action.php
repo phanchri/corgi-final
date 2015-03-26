@@ -1,6 +1,6 @@
 <?php
 
-
+//This page adds the actions for the form to function in the front end.
 
 
 if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
@@ -18,7 +18,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
 
 
 
-    // ADD THE FORM INPUT TO $new_post ARRAY
+    // This adds the form input to $new_post Array
     $new_post = array(
     'post_title'    =>   $corginame,
     'post_category' =>   array($_POST['corgi_gender'],$_POST['corgi_size'],$_POST['corgi_age'],$_POST['corgi_color']),
@@ -34,7 +34,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
 
 
 
-    //SAVE THE POST
+    //This saves the posts
     $pid = wp_insert_post($new_post,$wperror);
 
     wp_set_post_terms($pid,array($_POST['corgi_gender']),'corgi-gender',true);
@@ -54,11 +54,11 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
 
 
 
-    //REDIRECT TO THE NEW POST ON SAVE
+    //This redirects to the new post on save
     $link = get_permalink( $pid );
     wp_redirect( $link );
 
-    //ADD OUR CUSTOM FIELDS
+    //This adds the custom fields 
     add_post_meta($pid, '_data_corgi_vaccines', $corgivac, true);
     add_post_meta($pid, '_data_corgi_address', $corgiaddress, true);
     add_post_meta($pid, '_data_corgi_desex', $corgidesex, true);
@@ -68,15 +68,14 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POS
   if ($_FILES) {
   foreach ($_FILES as $file => $array) {
   $newupload = insert_attachment($file,$pid);
-  // $newupload returns the attachment id of the file that
-  // was just uploaded. Do whatever you want with that now.
+ 
   }
 }
 
 
-} // END THE IF STATEMENT THAT STARTED THE WHOLE FORM
+} 
 
-    //POST THE POST
+    //posts the post
     do_action('wp_insert_post', 'wp_insert_post');
 
 

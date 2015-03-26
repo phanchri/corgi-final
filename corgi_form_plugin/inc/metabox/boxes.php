@@ -1,27 +1,17 @@
 <?php
 /**
  * Include and setup custom metaboxes and fields.
- *
- * @category YourThemeOrPlugin
- * @package  Metaboxes
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+ * This file sets up the custom metaboxes and fields, it displays the Corgi form on the Corgi page while the jquery is used to make it run.
+ * The init.php, cmb.js and jquery.timepicker.min.js is coded by other people indicated in the files. 
  */
 
 add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
 
 
-
-/**
- * Define the metabox and field configurations.
- *
- * @param  array $meta_boxes
- * @return array
- */
 function cmb_sample_metaboxes( array $meta_boxes ) {
 
 
-	// Start with an underscore to hide fields from custom fields list
+	// Sets up the meta box, this is used to customize the Corgi form found under the page 'Corgis'.
 	$prefix = '_data_';
 
 	$meta_boxes[] = array(

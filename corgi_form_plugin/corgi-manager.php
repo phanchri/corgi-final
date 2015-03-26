@@ -9,7 +9,7 @@ Author URI: http://nkcp.com/
 */
 
 
-  /*Definitions*/
+  /*Sets up the WordPress content and Plugin urls and paths*/
 		if ( !defined('WP_CONTENT_URL') )
 		    define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
 		if ( !defined('WP_CONTENT_DIR') )
@@ -20,16 +20,17 @@ Author URI: http://nkcp.com/
 		if (!defined('PLUGIN_PATH'))
 		    define('PLUGIN_PATH', WP_CONTENT_DIR . '/plugins');
 
-		define('TC_FILE_PATH', dirname(__FILE__));
-		define('TC_DIR_NAME', basename(TC_FILE_PATH));
+		define('_FILE_PATH', dirname(__FILE__));
+		define('_DIR_NAME', basename(_FILE_PATH));
 
-    //include the main class file
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/cpt-corgis.php';
-    require_once PLUGIN_PATH .'/'.TC_DIR_NAME . '/inc/metabox/boxes.php';
+    //This includes the class files into the plugin.
+    require_once PLUGIN_PATH .'/'._DIR_NAME . '/inc/cpt-corgis.php';
+    require_once PLUGIN_PATH .'/'._DIR_NAME . '/inc/metabox/boxes.php';
+	
+	//Sets up the custom meta box
+    define( 'CMB_META_BOX_URL', PLUGIN_URL.'/'._DIR_NAME . '/inc/metabox/' );
 
-    define( 'CMB_META_BOX_URL', PLUGIN_URL.'/'.TC_DIR_NAME . '/inc/metabox/' );
-
-
+//Creates the Corgi form function.
 class CORGI_FORM {
 	function __construct() {
 		$this->CORGI_FORM();
@@ -41,12 +42,11 @@ class CORGI_FORM {
   }
 
 
-  //Starts everything
+  //This will start the code.
   add_action( 'init', 'corgiform_setup',1 );
 
   function corgiform_setup(){
 
-    //Enables Corgi 
     $CORGIPostType = new CORGIPostType();
 
 		//Register the post type
@@ -54,7 +54,7 @@ class CORGI_FORM {
 
     add_action( 'init', 'corgi_add_pages');
 
-    //Register corgi type taxonomies
+    //These actions will register corgi type taxonomies that will appear throughout the plugin.
     add_action( 'init', 'create_corgi_color_taxonomy');
     add_action( 'init', 'create_corgi_genre_taxonomy');
     add_action( 'init', 'create_corgi_age_taxonomy');
@@ -79,7 +79,7 @@ class CORGI_FORM {
     function corgi_shortcode_form($atts) {
 	   //ob_start and ob_get_clean turns on the output buffering. The code is used to buffer content to allow output. 
        ob_start();
-       include(PLUGIN_PATH .'/'.TC_DIR_NAME .'/inc/form.php');
+       include(PLUGIN_PATH .'/'._DIR_NAME .'/inc/form.php');
        $output = ob_get_clean();
        return $output;
     }
@@ -91,7 +91,7 @@ class CORGI_FORM {
   add_filter('get_header','corgi_form');
 
 
-    // Add needed scripts  array( 'jquery' )
+    // This code adds the required jquery scripts for the plugin to function. 
     function CORGI_FORM_scripts() {
 
 	          wp_enqueue_script('jquery_check', plugins_url('/js/jquery_check.js', __FILE__), array('jquery')
@@ -99,16 +99,17 @@ class CORGI_FORM {
 
 
     }
+    //Enqueues scripts
     add_action( 'wp_enqueue_scripts', 'CORGI_FORM_scripts' );
 
     function CORGI_FORM_stylesheet() {
-        // Respects SSL, Style.css is relative to the current file
+        // Registers and enqueues the custom stylesheet used for the front end form.
         wp_register_style( 'corgi-style', plugins_url('/inc/corgi_styles.css', __FILE__) );
         wp_enqueue_style( 'corgi-style' );
     }
     add_action( 'wp_enqueue_scripts', 'CORGI_FORM_stylesheet' );
 
-    /* Create some pages such Corgis and Add a corgi */
+    /* Creates a Corgis page that lists out the pets in the database and creates a page to add corgi profiles to the corgi list */
     function corgi_add_pages(){
         $corgis = '';
         $addcorgi= '';
@@ -136,7 +137,7 @@ class CORGI_FORM {
 
 add_action('admin_menu', 'ada_add_pages');
 
-// action function for above hook
+// Adds an Options page to control what features can be selected in the Corgi Form.
 function ada_add_pages() {
 
 add_submenu_page('edit.php?post_type=corgi', __('Options & About','wp_corgi'), __('Options & About','wp_corgi'), 'manage_options', 'corgi_options_page', 'corgi_options_page' );
