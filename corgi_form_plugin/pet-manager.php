@@ -2,7 +2,7 @@
 /*
 Plugin Name: Corgi Pet Form
 Plugin URI: http://nkcp.com/
-Description: NKCP is a pluging that allows the inputting of corgi pet information into the back end database of wordpress.
+Description: Corgi Pet Form is a pluging that allows the inputting of corgi pet information into the back end database of wordpress.
 Version: 1.0
 Author: Christina Phan
 Author URI: http://nkcp.com/
