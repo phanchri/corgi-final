@@ -4,14 +4,14 @@
 #new_post fieldset {
 	border:2px solid #B87554; 
 	padding:15px;
-	margin:20px 0
+	margin:20px 0;
 	}
 /*This sets the type on the form */
 #new_post label {
 	font-weight:normal;
 	margin-right:1.5em;
 	text-transform:uppercase;
-	font-size:13px
+	font-size:13px;
 	}
 /*This Configures the table shown on the form*/
 #new_post .field {
@@ -19,8 +19,8 @@
 	width:40%;
 	float:left;
 	padding:10px 0; 
-	border-bottom:
-	5px solid #eee
+	border-bottom;
+	5px solid #eee;
 	}
 
 #new_post .corgicolor {
@@ -36,7 +36,7 @@
 	border:1px dashed #999; 
 	font-size:1.5em;
 	margin:10px 0 0 0; 
-	text-align: center 
+	text-align: center; 
 	}
 
 /*This customizes where the font lies within the form and the look of the lists that appear on the form.*/
@@ -48,7 +48,8 @@ fieldset .listcorgiinfo {
 fieldset .listcorgiinfo li {
 	list-style:none;
 	padding:5px 0 5px 0;
-	margin:0}
+	margin:0;
+	}
 	
 fieldset .listcorgiinfo label, .s_label {
 	width:100px;
@@ -61,7 +62,7 @@ fieldset .listcorgiinfo label, .s_label {
 	list-style-type:none; 
 	display:inline;
 	margin:0;
-	padding:0
+	padding:0;
 	}
 
 .corgi_meta {

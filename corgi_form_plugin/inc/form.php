@@ -2,11 +2,12 @@
 
         <div id="add-corgi-form">
 
-            <form id="new_post" name="new_post" method="post" action="new_corgi" class="wpcf7-form" enctype="multipart/form-data"> 
-            
+           <form id="new_post" name="new_post" method="post" action= "wp-content/plugins/corgi_form_plugin/inc/new_corgi.php" class="wpcf7-form" enctype="multipart/form-data"> 
+            <!---<?php echo plugins_url( '/inc/new_corgi.php', dirname(__FILE__) ); ?>--->
             <!-- This is where the form starts. This page sets up the form that is displayed in the front end when the shortcode is used -->
 			<!-- This is customizes the types of information that will be used for the Corgi Information  -->
-
+				
+				<?php // The line below is our attempt at a WP relative path ?>
                 <p><?php _e('Add corgi information and special features in the database for future reference.', 'wp_corgi'); ?></p>
 
                 <fieldset>
