@@ -1,101 +1,56 @@
-=== Corgi Manager ===
-Contributors: Dianakc
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=dianakac%40gmail%2ecom&lc=BR&item_name=Diana%20K%2e%20C&item_number=Corgi%20Manager%20%2d%20A%20WordPress%20plugin%20for%20animal%20shelters&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
-Tags: animals, corgi, corgi shelters, animal shelters, BuddyPress
-Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Plugin Name: Corgi Form Plugin
+Plugin URI: http://nkcp.com/
+Description: Corgi Form is a plugin that allows the inputting of corgi corgi information into the back end database of wordpress.
+Version: 1.0
+Author: Christina Phan
+Author URI: http://nkcp.com/
 
-Corgi Manager is a WordPress plugin that help you to run an animal shelter website. The goal is keep the management as easy as possible.
+Description: 
 
-== Description ==
+This plugin can be used to add the different types of Corgi’s into the WordPress back end. It acts as a back end database that allows you to keep track of the amount of Corgi’s that is in the database and the different types of Corgi’s that is at the Pembroke Kennels. The plugin has a form that allows you to fill out and enter the specific features of the Corgi. It can also be used in the front end as a form for those who want to donate a Corgi to the Kennel and the information will enter into the database. 
 
-* **Animals as posts** - every animal is kept as a post type, add a corgi is like to add blog posts or pages.
-* **Especial info** - add specific info for every corgi such type, age, size, colors, breed etc.
-* **Frontend post** - Let users to post animals from a page in your site.
-* **Display Widget** - display corgis by category, status etc anywhere on your theme.
-* **Search form Widget** - a simple search form for corgis.
-* **Contact form** (Jetpack or SlimJetpack is required) - Display a contact form so vistors can send an email to the post author.
-* **Display Google Maps** - display a static Google Map just by provinding an address.
-* **Fully localized** - ready to display info in your language.
-* **Your own special info** - you do't need to stick to the info, e.g. you can use only the special you need such *Status*.
-* **Works on BuddyPress** - added BuddyPress suport so corgi posts are aso listed in Activity Stream.
+Features: 
 
-**Please note** though Corgi Manager share some data with old ADA plugin, Corgi Manager is not a update. If you need some help on migrating to this new plugin let me know in [Corgi Manager Suport Forum](http://wordpress.org/support/plugin/corgi-manager).
+- This plugin is tailored to Corgi Dogs specifically, however if you want to use it for other types of dogs it can be changed through the php files included in the plugin. 
+- Allows you to add a Corgi as a post that enters into the back end database.
+- Allows you to add specific features of Corgi’s such as the gender, size, age, colours, patterns, etc. This is makes keeping track of the types of Corgi’s and differentiating them much easier.
+- Inputs the types of Corgi’s into the back end of the WordPress database, while indication the special features of each Corgi. 
+- Allows you to post the form in the front end through the shortcode [corgi_shortcode].
 
-== Screenshots ==
+Installation:
 
-1. A corgi for adoption, single post view
-2. A Lost corgi,  single post view, you can display a Google Map by providing an area or address
-3. Widgets displaying last added corgis, corgis byt type, status etc and the search form
-4. Corgi post table in backend
+1. Download the zip file of the Corgi Form.
+2. Log In to WordPress, go to Plugins > Add New > Upload Plugin.
+3. Once the plugin is installed, activate the plugin.
+4. ‘Corgi List’ will be added in the Dashboard and ready to use.
 
-== Installation ==
+How to add specific features into the Corgi Form.
 
-1. Install Corgi Manager either via the WordPress.org plugin directory or by uploading the files to your server
-1. Go to *Corgis ? Options* & About to add categories such gender, age, etc
-1. Verify the auto created pages in Pages: *Add a Corgi* and *Corgis* (titles can vary if you're using translastion)
-1. That's it.  You're ready to go!
+Notes: In order to have special features or option added into the Corgi form, first, the special features and options will have to be added into the form. This can be done through the ‘Options & About’ page.
 
-== Frequently Asked Questions ==
+1. Hover over the ‘Corgi List’ button
+2. Click on ‘Options & About’
+3. Click on one of the buttons indicated. ‘Add corgi gender’, ‘Add corgi size’, ‘Add corgi age’, ‘Add corgi pattern’ and ‘Add corgi colour’
+4. Once one of the options is clicked for example ‘Add corgi age’, you will add a size under ‘Name’ 
+5. Enter in the age options. Make sure you enter a new age file for each age. So that there are under different options.
+6. The age will then add onto the list of options in the form.
 
-= How to allow users to post corgis? =
+How to add Corgi’s to the Database:
 
-In order to allow users to post in your site, firstly visit WordPress panel *Settings > General*, check the item *Membership - Anyone can register* and select an user role in *New User Default Role*, to at least `Contributor`.
-The Corgi Manager autocreate a *Add a corgi* page where users can add corgis only if the user is logged in, if not, a log in form is displayed. Any corgi post submitted by non-editor/admins will be held for moderation.
+1. Hover over the ‘Corgi List’ button 
+2. Click on ‘Add A Corgi’ page
+3. Once you scroll down, a ‘Corgi Form’ will appear.
+4. All you have to do now is enter the Corgi information in the form and click Publish. After Publishing the form the Corgi information will be added under the ‘Corgi List’ page.
 
-Note that users will access default register page, but you can use any other plugin to create frontend forms, or even BuddyPress to keep users connect.
+Notes: Another way to add a Corgi to the database is through the ‘Corgi List’ page. 
+1. Go to the ‘Corgi List’ page
+2. Click ‘Add A Corgi’
+3. This will redirect you to the “Add A Corgi’ page.
+4. Follow steps 3-4 in the above instructions.
 
-= How the contact form works? =
+How to use the short code:
 
-Every corgi post can display a contact form (you can turn off this on every post), so visitors can contact the post author. You must use either [Jetpack](http://wordpress.org/extend/plugins/jetpack/) or [SlimJetpack](http://wordpress.org/extend/plugins/slimjetpack/) in order to use this feature.
-Also, to avoid spam, is highly recommended to use [Akismet](http://akismet.com).
+The shortcode can be used as a front end form for people who want to donate their Corgis to the Kennel. Once they complete the form the information will enter into the database. 
 
-= What Add a Corgi and Corgis pages are for? =
-
-These page are auto generated to provide a place in your site to search and add corgis, you can delete these pages if not wanting to use these features.
-
-= How to change/adjust the style =
-
-You can copy the plugin stylesheet at `wp-content/plugins/corgi-manager/inc/corgi_styles.css` into your own theme stylesheet.
-In order to prevent plugin stylesheet from loading also, add the following to your `functions.php`:
-
-`add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
-function my_deregister_styles() {
-	wp_deregister_style( 'corgi-style' ); //Corgi Manager
-
-}`
-
-== Advanced Info ==
-Custom post type: corgi
-
-* **Taxonomies**: `corgi-type`, `corgi-status`, `corgi-color`, `corgi-gender`, `corgi-age`, `corgi-breed`, `corgi-size`, `corgi-coat` and `corgi-pattern`
-
-* **Metadata**: `_data_corgi_vaccines`, `_data_corgi_desex`, `_data_corgi_needs`, `_data_corgi_address`, `_data_corgi_email_option`
-
-== Upgrade Notice ==
-
-
-== Changelog ==
-
-= 1.4 =
-* Solved a CSS issue with IE
-* Solved corgi submit form shortcade insert issues
-
-= 1.3 =
-* Added CSS classes to every item in corgi metadata
-* Added translation (de_DE)
-* Minor info page editions
-
-= 1.2 =
-* Solved an issue with PHP 5.4
-
-= 1.1 =
-* Added BuddyPress suport
-* Some strings cleaning
-* Some naming conventions change
-
-= 1.0 =
-* First release
+1. Go to the page where you want to display the Corgi form
+2. Enter in [corgi_shortcode]

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Corgi Form Plugin
 Plugin URI: http://nkcp.com/
-Description: Corgi Corgi Form is a pluging that allows the inputting of corgi corgi information into the back end database of wordpress.
+Description: Corgi Form is a pluging that allows the inputting of corgi corgi information into the back end database of wordpress.
 Version: 1.0
 Author: Christina Phan
 Author URI: http://nkcp.com/
