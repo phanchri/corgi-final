@@ -52,7 +52,7 @@ class CORGIPostType {
 function create_corgi_genre_taxonomy()
 {
 
-    $labels = array('name' => _x( 'Gender','wp_corgi'),'menu_name' => __( 'Genders','wp_corgi'), 'add_new_item' => __( 'Add corgi gender','wp_corgi'));
+    $labels = array('name' => _x( 'Gender','wp_corgi'),'menu_name' => __( 'Genders','wp_corgi'), 'add_new_item' => __( 'Add Corgi Gender','wp_corgi'));
 		register_taxonomy( 'corgi-gender', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-gender', 'public' =>FALSE, 'show_admin_column'=>TRUE,'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('genre','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
@@ -61,7 +61,7 @@ function create_corgi_genre_taxonomy()
 function create_corgi_size_taxonomy()
 {
 
-    $labels = array('name' => _x( 'Size','wp_corgi'),'menu_name' => __( 'Sizes','wp_corgi'), 'add_new_item' => __( 'Add corgi size','wp_corgi'));
+    $labels = array('name' => _x( 'Size','wp_corgi'),'menu_name' => __( 'Sizes','wp_corgi'), 'add_new_item' => __( 'Add Corgi Size','wp_corgi'));
 		register_taxonomy( 'corgi-size', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-size', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('size','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
@@ -70,7 +70,7 @@ function create_corgi_size_taxonomy()
 function create_corgi_age_taxonomy()
 {
 
-    $labels = array('name' => _x( 'Age','wp_corgi'),'menu_name' => __( 'Ages','wp_corgi'), 'add_new_item' => __( 'Add corgi age','wp_corgi'));
+    $labels = array('name' => _x( 'Age','wp_corgi'),'menu_name' => __( 'Ages','wp_corgi'), 'add_new_item' => __( 'Add Corgi Age','wp_corgi'));
 		register_taxonomy( 'corgi-age', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-age', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('age','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
@@ -79,7 +79,7 @@ function create_corgi_age_taxonomy()
 function create_corgi_pattern_taxonomy()
 {
 
-    $labels = array('name' => _x( 'Pattern','wp_corgi'),'menu_name' => __( 'Patterns','wp_corgi'), __( 'Add corgi pattern','wp_corgi'));
+    $labels = array('name' => _x( 'Pattern','wp_corgi'),'menu_name' => __( 'Patterns','wp_corgi'), __( 'Add Corgi Pattern','wp_corgi'));
 		register_taxonomy( 'corgi-pattern', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-pattern', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE,'rewrite' => array( 'slug' => __('pattern','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }
@@ -88,7 +88,7 @@ function create_corgi_pattern_taxonomy()
 function create_corgi_color_taxonomy()
 {
 
-    $labels = array('name' => _x( 'Color','wp_corgi'),'menu_name' => __( 'Colors','wp_corgi'), __( 'Add corgi color','wp_corgi'));
+    $labels = array('name' => _x( 'Color','wp_corgi'),'menu_name' => __( 'Colors','wp_corgi'), __( 'Add Corgi Colour','wp_corgi'));
 		register_taxonomy( 'corgi-color', 'corgi', array( 'hierarchical' => false, 'labels' => $labels, 'query_var' => 'corgi-color', 'public' =>FALSE, 'show_admin_column'=>TRUE, 'show_in_nav_menus'=>TRUE, 'rewrite' => array( 'slug' => __('color','wp_corgi'), 'hierarchical' => false,'with_front' => FALSE ) ) );
     flush_rewrite_rules();
 }

@@ -5,6 +5,8 @@ Version: 1.0
 Author: Christina Phan
 Author URI: http://nkcp.com/
 
+NOTES: The Corgi shortcode form is displayed on our 'Donate A Corgi' page.
+
 Description: 
 
 This plugin can be used to add the different types of Corgi’s into the WordPress back end. It acts as a back end database that allows you to keep track of the amount of Corgi’s that is in the database and the different types of Corgi’s that is at the Pembroke Kennels. The plugin has a form that allows you to fill out and enter the specific features of the Corgi. It can also be used in the front end as a form for those who want to donate a Corgi to the Kennel and the information will enter into the database. 

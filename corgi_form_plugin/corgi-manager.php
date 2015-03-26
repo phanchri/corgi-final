@@ -9,7 +9,7 @@ Author URI: http://nkcp.com/
 */
 
 
-  /*Sets up the WordPress content and Plugin urls and paths*/
+  /*Sets up the WordPress content and Plugin urls and links the paths*/
 		if ( !defined('WP_CONTENT_URL') )
 		    define( 'WP_CONTENT_URL', get_option('siteurl') . '/wp-content');
 		if ( !defined('WP_CONTENT_DIR') )
@@ -23,7 +23,7 @@ Author URI: http://nkcp.com/
 		define('_FILE_PATH', dirname(__FILE__));
 		define('_DIR_NAME', basename(_FILE_PATH));
 
-    //This includes the class files into the plugin.
+    //This includes the class file paths into the plugin.
     require_once PLUGIN_PATH .'/'._DIR_NAME . '/inc/cpt-corgis.php';
     require_once PLUGIN_PATH .'/'._DIR_NAME . '/inc/metabox/boxes.php';
 	
@@ -109,7 +109,7 @@ class CORGI_FORM {
     }
     add_action( 'wp_enqueue_scripts', 'CORGI_FORM_stylesheet' );
 
-    /* Creates a Corgis page that lists out the pets in the database and creates a page to add corgi profiles to the corgi list */
+    // Creates a Corgis page that lists out the pets in the database and creates a page to add corgi profiles to the corgi list 
     function corgi_add_pages(){
         $corgis = '';
         $addcorgi= '';
